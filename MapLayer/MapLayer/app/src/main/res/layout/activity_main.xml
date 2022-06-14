@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="250px"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/plusButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#EDE9E0"
+                        android:onClick="increaseZoom"
+                        app:srcCompat="@drawable/plus" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#D3CDC3"
+                        android:onClick="decreaseZoom"
+                        app:srcCompat="@drawable/minus" />
+
+                    <ImageButton
+                        android:id="@+id/movingButton"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#EDE9E0"
+                        android:onClick="onMoving"
+                        app:srcCompat="@drawable/unlock" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="100px"
+                        android:background="#D6D1C7"
+                        android:onClick="imagesavetomyphonegallery"
+                        app:srcCompat="@drawable/save" />
+
+                    <ImageButton
+                        android:id="@+id/imageButton4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="100px"
+                        android:background="#EDE9E0"
+                        android:onClick="chooseImage"
+                        app:srcCompat="@drawable/camera" />
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
+
+        <com.otaliastudios.zoom.ZoomLayout
+            android:id="@+id/maxParent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:hasClickableChildren="true"
+            app:horizontalPanEnabled="@bool/pan"
+            app:verticalPanEnabled="@bool/pan">
+
+            <FrameLayout
+                android:id="@+id/parent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/imageGet"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            </FrameLayout>
+        </com.otaliastudios.zoom.ZoomLayout>
+
+        <LinearLayout
+            android:layout_width="600px"
+            android:layout_height="match_parent"
+            android:background="#D5D0C6"
+            android:orientation="vertical">
+
+            <ScrollView
+                android:layout_width="729dp"
+                android:layout_height="409dp"
+                tools:ignore="SpeakableTextPresentCheck">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <ImageButton
+                        android:id="@+id/imageButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:onClick="onHamburger"
+                        app:srcCompat="@drawable/icons" />
+
+                    <ImageButton
+                        android:id="@+id/editButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="3px"
+                        android:background="#D5D0C6"
+                        android:onClick="onDelete"
+                        app:srcCompat="@drawable/delete" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3px"
+                        app:srcCompat="@drawable/layers" />
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="600px"
+                        android:layout_height="125px"
+                        android:layout_margin="0dip"
+                        android:background="@android:drawable/btn_dropdown"
+                        android:entries="@array/layers"
+                        android:padding="0dip"
+                        android:spinnerMode="dropdown" />
+
+                    <TableLayout
+                        android:layout_width="600px"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dip"
+                        android:padding="0dip">
+
+                        <TableRow android:layout_width="match_parent">
+
+                            <CheckBox
+                                android:id="@+id/Layer1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:buttonTint="#000000"
+                                android:checked="true"
+                                android:onClick="onCheckboxClicked"
+                                android:text="@string/Layer1"
+                                android:textColorHighlight="#251919"
+                                android:textColorLink="#201717"
+                                app:useMaterialThemeColors="false" />
+
+                            <CheckBox
+                                android:id="@+id/Layer2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:buttonTint="#000000"
+                                android:checked="true"
+                                android:onClick="onCheckboxClicked"
+                                android:text="@string/Layer2" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="0dip"
+                            android:padding="0dip">
+
+                            <CheckBox
+                                android:id="@+id/Layer3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:buttonTint="#000000"
+                                android:checked="true"
+                                android:onClick="onCheckboxClicked"
+                                android:text="@string/Layer3" />
+
+                            <CheckBox
+                                android:id="@+id/Layer4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:buttonTint="#000000"
+                                android:checked="true"
+                                android:onClick="onCheckboxClicked"
+                                android:text="@string/Layer4" />
+
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
