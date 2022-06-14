@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MapLayer</string>
+    <string name="app_name">MapIT</string>
     <bool name="pan">true</bool>
     <string name="Layer1">Layer 1</string>
     <string name="Layer2">Layer 2</string>
